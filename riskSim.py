@@ -71,12 +71,12 @@ def theAttack(atts, defs):      #takes amount of attackers and defenders and ret
 
 
 #here is the loop of perpetual battles until we find our answer
-def tillDeath(runs, people, statsDic):
+def tillDeath(runs, attackers, defenders, statsDic):
 
     for i in range(runs):
         #re init the people to do another run
-        attackers = people //2
-        defenders = people //2
+        attackers = attackers
+        defenders = defenders
 
 
         while (attackers > 0) and (defenders > 0):
@@ -97,9 +97,11 @@ def tillDeath(runs, people, statsDic):
 
 
 def main():
-    ttlPeople = int(input("Tell me how many people will be in the battle \nThe people will be divided in half for defenders and attackers\n-->   "))
+    
+    attackers = int(input("how many attackers "))
+    defenders = int(input("how many defenders "))
     ttlRuns = int(input("Tell me how many times should we battle until they all die (runs)?\n-->   "))
-    tillDeath(ttlRuns, ttlPeople, statsDic)
+    tillDeath(ttlRuns, attackers, defenders, statsDic)
     
     #print all the stuff in the dic
     for i in statsDic:
