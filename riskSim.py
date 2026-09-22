@@ -55,6 +55,8 @@ def theAttack(atts, defs):      #takes amount of attackers and defenders and ret
     deList = defenderRoll(defs)
     atList.sort(reverse=True)   #makes the list sorted so we can compare the highes aggaint highest easily
     deList.sort(reverse=True)
+    print("attacker rolled die ", atList)
+    print("defender rolled die ", deList)
 
     attpts = 0
     defpts = 0

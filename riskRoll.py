@@ -3,16 +3,19 @@ import random
 
 def askUserCharacter():
     attPeople = int(input("How many attackers? "))
-    defPeople = int(input("How many defenders?"))
+    defPeople = int(input("How many defenders? "))
 
     print("Okay press enter for a dice roll and people left will be printed")
     while True:
         input("press enter")
+        print("-------------------------")
+
         peopleLeft = theAttack(attPeople,defPeople)
         attPeople -= peopleLeft[1]
         defPeople -= peopleLeft[0]
         print("Attackers left:", attPeople)
         print("Defenders left:", defPeople)
+        print()
         
     
 
