@@ -10,6 +10,8 @@ def askUserCharacter():
         input("press enter")
         print("-------------------------")
 
+        print("Starting Attackers:    ", attPeople)
+        print("Starting Defenders:    ", defPeople,"\n")
         peopleLeft = theAttack(attPeople,defPeople)
         attPeople -= peopleLeft[1]
         defPeople -= peopleLeft[0]
