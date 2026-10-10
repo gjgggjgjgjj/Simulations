@@ -73,12 +73,12 @@ def theAttack(atts, defs):      #takes amount of attackers and defenders and ret
 
 
 #here is the loop of perpetual battles until we find our answer
-def tillDeath(runs, attackers, defenders, statsDic):
+def tillDeath(runs, preattackers, predefenders, statsDic):
 
     for i in range(runs):
         #re init the people to do another run
-        attackers = attackers
-        defenders = defenders
+        attackers = preattackers
+        defenders = predefenders
 
 
         while (attackers > 0) and (defenders > 0):
