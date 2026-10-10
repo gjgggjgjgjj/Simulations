@@ -1,5 +1,5 @@
-# from five_card_stud import #don't know yet
-from combinations import cr ,crTwo
+from five_card_stud import theCardRank, winDictionary, printResults, mathPercentage #don't know yet
+from combinations import cr ,crTwo, cFive
 
 #the combinations of this would be
 # cr(6,3) * cr(6,2)
@@ -62,7 +62,7 @@ def totalCombRisk():
             resultPts = theAttack(attacks,defences)
             retTotalPts[0] += resultPts[0]
             retTotalPts[1] += resultPts[1]
-            totalPossibleCombinationInt += 2
+            totalPossibleCombinationInt += 2   #because two points are given per round rolled
 
     attackPercentage = retTotalPts[0]/ totalPossibleCombinationInt
     defenderPercentage = retTotalPts[1]/ totalPossibleCombinationInt
@@ -72,10 +72,25 @@ def totalCombRisk():
     print("futher testing here is retTotalPts:", retTotalPts)
     return retTotalPts
 
-def totalPermPoker:
+#poker sections --------------------------------------------------------
+def totalCombPoker():
+    #here is total combinations then we'll just go through and test each variation
+    totalPokerHands = cFive(52)
+    for i in totalPokerHands:
+        # print("here is the hand being passed (its a list lol) into theCardRank",i)
+        theCardRank(i,winDictionary)
+
+    printResults(len(totalPokerHands))
+
+
 
 def main():
-    totalCombRisk()
+    selection = int(input("If you wan't the combo of risk stats press 1 otherwise press 2 for poker -->  "))
+    if selection == 1:
+        totalCombRisk()
+    else:
+        totalCombPoker()
+
 
 
 if __name__ == "__main__":

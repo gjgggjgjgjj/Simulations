@@ -30,15 +30,28 @@ def c(n): #r must be 3 for algorithm to work
             for k in range (j+1, n+1):
                 print(i,j,k)
 
-def cFive(n)  #r is five
+def cFive(n):  #r is five
+    retList = []
+    for a in range(n):
+        for b in range(a+1, n):
+            for c in range(b+1, n):
+                for d in range(c+1, n):
+                    for e in range(d+1, n):
+                        print(a,b,c,d,e)
+                        combo = [a,b,c,d,e]
+                        retList.append(combo)
+    return retList
 
-                """
+
+
+
+"""
  def c(n): #r must be 3 for algorithm to work
     for i in range(1, n+1):
         for j in range(i+1, n+1):
             for k in range (j+1, n+1):
                 print(i,j,k)
-                    """
+"""
 
 def cr(n): #r must be 3 for algorithm to work
     #retlist of the values appended
@@ -70,7 +83,7 @@ def main():
     #
     # c(5)
     n = int(input("what do you want n to be? [r with be 3 so cr{n,r}] --> "))
-    cr(n)
+    cFive(n)
 
 if __name__=="__main__":
     main()
