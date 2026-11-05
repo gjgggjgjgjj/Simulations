@@ -1,5 +1,5 @@
 from five_card_stud import theCardRank, winDictionary, printResults, mathPercentage #don't know yet
-from combinations import cr ,crTwo, cFive
+from combinations import cr ,crTwo, cFive, pr, prTwo
 
 #the combinations of this would be
 # cr(6,3) * cr(6,2)
@@ -49,9 +49,9 @@ def theAttack(atts, defs):      #attacker die list and def die list
 
 def totalCombRisk():
     #will need to create a list of lists first 
-    attListCombos = cr(6)  #returns a list with all combos of cr(6,3)
+    attListCombos = pr(6)  #returns a list with all combos of cr(6,3)
 
-    defListCombos = crTwo(6)  #returns same as above but with only 2 dice as r is two
+    defListCombos = prTwo(6)  #returns same as above but with only 2 dice as r is two
     #now we will need to compare every single combinations of these to find our stats
     retTotalPts = [0,0]   #first index is attacker points, second is defender points
     totalPossibleCombinationInt = 0 #we will find this out soon enough

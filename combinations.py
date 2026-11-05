@@ -3,10 +3,26 @@
 #using nested for loops
 
 def pr(n): #r must be 3 for algorithm to work
+    retList = []
     for i in range(1, n+1):
         for j in range(1, n+1):
             for k in range (1, n+1):
-                print(i,j,k)
+                # print(i,j,k)
+                combo = [i,j,k]
+                retList.append(combo)
+    return retList
+                
+
+def prTwo(n):  #r is 2 for defender die in risk 
+    retList = []
+    for i in range(1, n+1):
+        for j in range(1, n+1):
+            # print(i,j)
+            combo = [i,j]
+            retList.append(combo)
+    return retList
+
+
 
 def p(n): #r must be 3 for algorithm to work
     for i in range(1, n+1):
@@ -30,14 +46,14 @@ def c(n): #r must be 3 for algorithm to work
             for k in range (j+1, n+1):
                 print(i,j,k)
 
-def cFive(n):  #r is five
+def cFive(n):  #r is five including 0
     retList = []
     for a in range(n):
         for b in range(a+1, n):
             for c in range(b+1, n):
                 for d in range(c+1, n):
                     for e in range(d+1, n):
-                        print(a,b,c,d,e)
+                        # print(a,b,c,d,e)
                         combo = [a,b,c,d,e]
                         retList.append(combo)
     return retList
@@ -82,8 +98,8 @@ def main():
     # p(5)
     #
     # c(5)
-    n = int(input("what do you want n to be? [r with be 3 so cr{n,r}] --> "))
-    cFive(n)
+    n = int(input("what is n? "))
+    pr(n)
 
 if __name__=="__main__":
     main()

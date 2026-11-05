@@ -70,6 +70,7 @@ def theCardRank(theHand, windic):
             straightcnt = 0
             continue
         if hashrank[i] > 1:
+            straightcnt = 0   #this is the culprit of my bug! it needs to be reset #jk it did nothing
             if hashrank[i] == 2:
                 pair += 1
             elif hashrank[i] == 3:
@@ -79,7 +80,10 @@ def theCardRank(theHand, windic):
         #this else is evaluating a straight now
         else:
             straightcnt += 1
-            if i >= 9:  #evaluating the weird straight with ace on top
+            #this was my stupid bug i had the count starting at 9 instead of 10 now because 10JQKA 
+            #accidentilly had 9 10 J Q A working to count towards it
+            #jk EVERN FURTHER I NEED TO ONLY INCLUDE KING WITH COUNT 4 AS 7 8 9 10 AND ACE would trigger this
+            if i >= 12:  #evaluating the weird straight with ace on top
                 if straightcnt == 4 and hasAce:
                     straight = True
             if straightcnt == 5:
@@ -102,10 +106,10 @@ def theCardRank(theHand, windic):
     if flush and straight:
         windic["straight flush"] += 1
         return
-    if straight:
+    if straight and not flush:
         windic["straight"] += 1
         return
-    if flush:
+    if flush and not straight:
         windic["flush"] += 1
         return
     if fourpair:
