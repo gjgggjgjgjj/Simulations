@@ -144,8 +144,8 @@ def main():
 
     sample_paragraph = (
         "Hello World! This is a test of our custom RSA encryption and decryption system.\n"
-        "We are verifying that multiblock encoding works cleanly across newlines,\ttabs, "
-        "punctuation marks like periods, commas, question marks?, and exclamation points! "
+        "We miss our fiance and HATE long distance thing that we are doing right now,\ttabs, "
+        "But hey well be married in may and its gonna be great hip hip curray anyways here is some more stuff to test"
         "Numbers 0123456789 and uppercase and lowercase letters ABCDEFGHIJKLMNOPQRSTUVWXYZ "
         "abcdefghijklmnopqrstuvwxyz are all included in the 70 character alphabet.\r\n"
     )
